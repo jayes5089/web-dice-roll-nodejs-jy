@@ -4,7 +4,9 @@ const cors = require('cors');
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.use(cors());
+app.use(cors({
+    origin: 'https://gray-ocean-05256d010.5.azurestaticapps.net/'
+}));
 
 app.get('/roll-dice', (req, res) => {
     const die1 = Math.floor(Math.random() * 6) + 1;
